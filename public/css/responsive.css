@@ -139,6 +139,54 @@
   max-width: 100%;
 }
 
+/* App-features section on mobile:
+   - features stack first (centered), phone comes last
+   - phone is cropped to half its height and fades to transparent at bottom */
+.app-features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.app-features-col {
+  gap: var(--space-10);
+}
+
+.app-feature-item {
+  align-items: center;
+  text-align: center;
+}
+
+/* Poker sites bar — stack vertically on mobile, all centered. */
+.poker-sites-bar {
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Bullet Pro section logo on homepage — smaller on mobile. */
+.pro-logo {
+  max-width: 240px;
+}
+
+.app-features-phone {
+  order: 999;
+  width: 100%;
+  max-width: 320px;
+  margin-inline: auto;
+  aspect-ratio: 9 / 9;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-features-phone .app-phone-img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 90%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 90%);
+}
+
 /* Hero on mobile: phone sits behind centered text. */
 .hero {
   position: relative;
@@ -320,13 +368,47 @@
     max-width: 380px;
   }
 
-  /* App Features 3-col */
+  /* Poker sites bar — restore horizontal row on tablet+ */
+  .poker-sites-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-10);
+  }
+
+  /* Bullet Pro logo — restore desktop size */
+  .pro-logo {
+    max-width: 460px;
+  }
+
+  /* App Features 3-col — restore desktop grid layout */
   .app-features-grid {
+    display: grid;
     grid-template-columns: 1fr auto 1fr;
+  }
+
+  .app-features-col {
+    gap: var(--space-12);
+  }
+
+  .app-feature-item {
+    align-items: stretch;
+    text-align: left;
   }
 
   .app-features-phone {
     order: 0;
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .app-features-phone .app-phone-img {
+    width: 100%;
+    max-width: 480px;
+    -webkit-mask-image: none;
+            mask-image: none;
   }
 
   .app-features-col--right {
@@ -339,10 +421,6 @@
 
   .app-features-headline {
     font-size: var(--font-size-3xl);
-  }
-
-  .app-phone-img {
-    max-width: 480px;
   }
 
   /* Value cards */

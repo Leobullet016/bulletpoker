@@ -106,11 +106,18 @@
       document.body.classList.remove('qr-modal-open');
     }
 
+    var DOWNLOAD_URL = 'https://pro.bullet.cash/download-bullet-cash';
+    var MOBILE_BREAKPOINT = 768;
+
     document.addEventListener('click', function (e) {
       var trigger = e.target.closest('a[href="/criar-conta"], a[href="/qr"]');
       if (trigger) {
         e.preventDefault();
-        open();
+        if (window.innerWidth < MOBILE_BREAKPOINT) {
+          window.location.href = DOWNLOAD_URL;
+        } else {
+          open();
+        }
         return;
       }
       if (e.target.closest('[data-qr-close]')) {
