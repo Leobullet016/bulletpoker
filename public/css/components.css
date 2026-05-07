@@ -1,0 +1,141 @@
+/* ==========================================================
+   components.css — Buttons, nav links, interactive elements
+   ========================================================== */
+
+/* --- Button: Primary --- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: #0d0d0d;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    font-weight var(--transition-fast);
+  line-height: 1;
+  will-change: transform;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(194, 241, 65, 0.25);
+  font-weight: var(--font-weight-regular);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(194, 241, 65, 0.2);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.125rem;
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-lg);
+}
+
+/* --- Button: Ghost --- */
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  will-change: transform;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  background: rgba(194, 241, 65, 0.06);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+  font-weight: var(--font-weight-regular);
+}
+
+.btn-ghost:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* --- WhatsApp button --- */
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+  color: var(--color-accent);
+  background: rgba(194, 241, 65, 0.08);
+  transform: scale(1.08);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.95);
+}
+
+/* --- Nav links --- */
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding-block: var(--space-2);
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link--active {
+  color: var(--color-text-primary);
+}

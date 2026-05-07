@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="100%" height="100%" style="display:block;">
+  <!-- phone — original viewBox 13.3333×18.3333, scale ×1.091, center x offset 2.73 -->
+  <g transform="translate(2.73,0) scale(1.091)">
+    <path d="M10.8333 0.833333H2.5C1.57953 0.833333 0.833333 1.57953 0.833333 2.5V15.8333C0.833333 16.7538 1.57953 17.5 2.5 17.5H10.8333C11.7538 17.5 12.5 16.7538 12.5 15.8333V2.5C12.5 1.57953 11.7538 0.833333 10.8333 0.833333Z"
+      stroke="#C2F141" stroke-linecap="round" stroke-width="1.527"/>
+  </g>
+  <!-- home dot — 2px circle at bottom center of phone -->
+  <circle cx="10" cy="17.2" r="0.9" stroke="#C2F141" stroke-width="1.2"/>
+</svg>

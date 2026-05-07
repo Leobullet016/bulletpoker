@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="none" style="display: block;" viewBox="0 0 64 64" width="100%">
+<g id="Container">
+<path d="M0 16C0 7.16344 7.16344 0 16 0H48C56.8366 0 64 7.16344 64 16V48C64 56.8366 56.8366 64 48 64H16C7.16344 64 0 56.8366 0 48V16Z" fill="var(--fill-0, white)" fill-opacity="0.05"/>
+<g id="Icon">
+<path d="M32 45.3333C39.3638 45.3333 45.3333 39.3638 45.3333 32C45.3333 24.6362 39.3638 18.6667 32 18.6667C24.6362 18.6667 18.6667 24.6362 18.6667 32C18.6667 39.3638 24.6362 45.3333 32 45.3333Z" id="Vector" stroke="var(--stroke-0, #D8FF3A)" stroke-linecap="round" stroke-width="2.66667"/>
+<path d="M32 18.6667C28.5763 22.2615 26.6667 27.0357 26.6667 32C26.6667 36.9643 28.5763 41.7385 32 45.3333C35.4237 41.7385 37.3333 36.9643 37.3333 32C37.3333 27.0357 35.4237 22.2615 32 18.6667Z" id="Vector_2" stroke="var(--stroke-0, #D8FF3A)" stroke-linecap="round" stroke-width="2.66667"/>
+<path d="M18.6667 32H45.3333" id="Vector_3" stroke="var(--stroke-0, #D8FF3A)" stroke-linecap="round" stroke-width="2.66667"/>
+</g>
+</g>
+</svg>

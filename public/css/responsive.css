@@ -1,0 +1,513 @@
+/* ==========================================================
+   responsive.css — Breakpoints (min-width only, mobile-first)
+   375 | 768 | 1024 | 1440
+   ========================================================== */
+
+/* --- Base mobile (<375px) — apply via low-clamp to keep headlines from
+   overflowing on small phones. These are the safe defaults; min-width
+   queries below scale up. --- */
+
+.hero-headline {
+  font-size: clamp(1.875rem, 8vw, 2.5rem);
+}
+
+.article-headline,
+.pro-hero-h1,
+.pro-cta-banner-headline,
+.news-hero-headline {
+  font-size: clamp(1.875rem, 7vw, 2.5rem);
+}
+
+.app-features-headline,
+.section-headline,
+.stats-headline,
+.pro-overview-headline,
+.pro-benefits-headline,
+.pro-stats-headline,
+.coin-cta-headline,
+.cta-headline,
+.feature-headline {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+/* --- Hide desktop nav on small screens — show hamburger toggle instead. --- */
+.header-nav {
+  display: none;
+}
+
+.header-actions {
+  display: none;
+}
+
+.menu-toggle {
+  display: inline-flex;
+}
+
+.header-inner {
+  gap: var(--space-3);
+}
+
+.container {
+  padding-inline: var(--space-4);
+}
+
+/* Coin CTA: stack vertically on mobile so 260px coin doesn't overflow. */
+.coin-cta-inner {
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-8);
+  padding-block: var(--space-16);
+}
+
+.coin-cta-content {
+  align-items: center;
+}
+
+.coin-img {
+  width: clamp(220px, 60vw, 300px);
+  object-fit: contain;
+}
+
+/* Footer mobile: everything centered, stacked.
+   - footer-nav: brand + 3 columns stack vertically (1-col), all centered
+   - footer-legal-inner: copyright on top, social icons below, FINTRAC text at bottom */
+.footer-nav {
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+.footer-brand {
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-col ul {
+  align-items: center;
+}
+
+.footer-col-title {
+  text-align: center;
+}
+
+.footer-legal {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-legal-inner {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Unwrap .footer-legal-text so its <p>s order with .footer-social */
+.footer-legal-text {
+  display: contents;
+}
+
+.footer-legal-text p {
+  text-align: center;
+  margin: 0;
+}
+
+.footer-copyright {
+  order: 1;
+}
+
+.footer-social {
+  order: 2;
+  justify-content: center;
+}
+
+.footer-legal-text p:not(.footer-copyright) {
+  order: 3;
+}
+
+/* Prevent dashboard/laptop/phone images from causing horizontal scroll. */
+.pro-laptop-img,
+.pro-dashboard,
+.app-phone-img,
+.hero-phone {
+  max-width: 100%;
+}
+
+/* Hero on mobile: phone sits behind centered text. */
+.hero {
+  position: relative;
+}
+
+.hero-inner {
+  position: relative;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+.hero-headline,
+.hero-subheading {
+  margin-inline: auto;
+}
+
+.hero-actions {
+  justify-content: center;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-ghost {
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-phone-wrap {
+  width: 70%;
+  max-width: 320px;
+  opacity: 0.35;
+}
+
+.hero-phone {
+  width: 100%;
+}
+
+/* QR modal sized for small screens by default. */
+.qr-modal {
+  padding: var(--space-4);
+}
+
+.qr-modal__code {
+  width: clamp(180px, 60vw, 220px);
+  height: clamp(180px, 60vw, 220px);
+}
+
+/* --- 375px — large phones --- */
+@media (min-width: 375px) {
+  .hero-headline {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* --- 768px — tablets --- */
+@media (min-width: 768px) {
+
+  .container {
+    padding-inline: var(--space-8);
+  }
+
+  /* Restore desktop header — show centered nav + actions, hide hamburger. */
+  .header-nav {
+    display: flex;
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .header-inner {
+    gap: var(--space-8);
+  }
+
+  /* Restore desktop coin CTA — horizontal layout. */
+  .coin-cta-inner {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-10);
+    padding-block: var(--space-20);
+  }
+
+  .coin-cta-content {
+    align-items: flex-start;
+  }
+
+  /* Footer 4-col on tablet+: brand | Produto | Legal | Contato */
+  .footer-nav {
+    grid-template-columns: auto 1fr 1.5fr 1.5fr;
+    gap: var(--space-10);
+    align-items: start;
+    text-align: left;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .footer-col {
+    display: block;
+    align-items: stretch;
+  }
+
+  .footer-col ul {
+    align-items: stretch;
+  }
+
+  .footer-col-title {
+    text-align: left;
+  }
+
+  .footer-legal {
+    text-align: left;
+  }
+
+  /* Hero — restore 2-col layout, text aligned left, phone to the right. */
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+  }
+
+  .hero-headline,
+  .hero-subheading {
+    margin-inline: 0;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.75rem, 6vw, 5rem);
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: auto;
+    max-width: none;
+  }
+
+  .hero-visual {
+    position: static;
+    z-index: auto;
+    justify-content: flex-end;
+    pointer-events: auto;
+  }
+
+  .hero-phone-wrap {
+    width: auto;
+    max-width: none;
+    opacity: 1;
+  }
+
+  .hero-phone {
+    max-width: 380px;
+  }
+
+  /* App Features 3-col */
+  .app-features-grid {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .app-features-phone {
+    order: 0;
+  }
+
+  .app-features-col--right {
+    text-align: right;
+  }
+
+  .app-features-col--right .app-feature-icon {
+    margin-left: auto;
+  }
+
+  .app-features-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .app-phone-img {
+    max-width: 480px;
+  }
+
+  /* Value cards */
+  .value-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Coin CTA — let layout.css clamp drive the size */
+
+  .coin-cta-headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Stats */
+  .stats-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Footer legal bar: legal text left, social icons right on tablet+ */
+  .footer-legal-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-8);
+  }
+
+  .footer-legal-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: left;
+  }
+
+  .footer-legal-text p {
+    text-align: left;
+  }
+
+  .footer-copyright,
+  .footer-social,
+  .footer-legal-text p:not(.footer-copyright) {
+    order: initial;
+  }
+
+}
+
+/* --- 1024px — desktops --- */
+@media (min-width: 1024px) {
+
+  .container {
+    padding-inline: var(--space-10);
+  }
+
+  .hero {
+    padding-block: var(--space-32) var(--space-24);
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .feature-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section-headline {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .cta-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .stat-number {
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  /* Coin CTA — let layout.css clamp drive the size */
+
+  .coin-cta-inner {
+    padding-block: var(--space-24);
+    gap: var(--space-12);
+  }
+
+  .coin-cta-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .stats-headline {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+
+}
+
+/* --- 1440px — large screens --- */
+@media (min-width: 1440px) {
+
+  .container {
+    padding-inline: var(--space-12);
+  }
+
+}
+
+/* --- Pro + News pages breakpoints --- */
+@media (min-width: 768px) {
+
+  .pro-overview-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pro-overview-headline,
+  .pro-benefits-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .pro-stats-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .article-headline {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pro-integration-headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  .pro-cta-banner-headline {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .pro-feature-item {
+    gap: var(--space-8);
+  }
+
+  .pro-overview-grid:not(.pro-overview-grid--single) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pro-benefit-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pro-hero-h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+}

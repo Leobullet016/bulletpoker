@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Build / temp
+dist/
+build/
+*.log
+*.tmp
+
+# Claude / Agent state
+.claude/settings.local.json
+
+# Node (if ever added)
+node_modules/
+package-lock.json
+yarn.lock

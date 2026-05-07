@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" style="display: block;" viewBox="0 0 64 64" width="100%">
+<g id="Container">
+<path d="M0 16C0 7.16344 7.16344 0 16 0H48C56.8366 0 64 7.16344 64 16V48C64 56.8366 56.8366 64 48 64H16C7.16344 64 0 56.8366 0 48V16Z" fill="var(--fill-0, white)" fill-opacity="0.05"/>
+</g>
+<g id="Icon">
+<path d="M37.3333 18.6667H26.6667C25.1939 18.6667 24 19.8606 24 21.3333V42.6667C24 44.1394 25.1939 45.3333 26.6667 45.3333H37.3333C38.8061 45.3333 40 44.1394 40 42.6667V21.3333C40 19.8606 38.8061 18.6667 37.3333 18.6667Z" stroke="var(--stroke-0, #D8FF3A)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667"/>
+<path d="M32 40.6667H32.0133" stroke="var(--stroke-0, #D8FF3A)" stroke-linecap="round" stroke-width="2.66667"/>
+</g>
+</svg>
