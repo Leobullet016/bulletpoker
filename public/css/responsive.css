@@ -157,10 +157,19 @@
   text-align: center;
 }
 
-/* Poker sites bar — stack vertically on mobile, all centered. */
+/* Poker sites bar — stack vertically on mobile with uniform spacing. */
 .poker-sites-bar {
   flex-direction: column;
-  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding-block: var(--space-10);
+}
+
+.poker-site-logo {
+  height: 40px;
+  max-width: 180px;
+  flex-shrink: 0;
 }
 
 /* Bullet Pro section logo on homepage — smaller on mobile. */
@@ -373,6 +382,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--space-10);
+    padding-block: var(--space-12);
+  }
+
+  .poker-site-logo {
+    height: 28px;
+    max-width: 160px;
   }
 
   /* Bullet Pro logo — restore desktop size */
