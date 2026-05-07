@@ -179,6 +179,15 @@
   padding-block: var(--space-16);
 }
 
+/* Value cards on mobile — extra lateral breathing room so cards aren't edge-to-edge. */
+.value-cards {
+  padding-inline: var(--space-4);
+}
+
+.value-card {
+  padding: var(--space-6);
+}
+
 /* Bullet Pro section logo on homepage — smaller on mobile. */
 .pro-logo {
   max-width: 240px;
@@ -454,6 +463,11 @@
   /* Value cards */
   .value-cards {
     grid-template-columns: repeat(3, 1fr);
+    padding-inline: 0;
+  }
+
+  .value-card {
+    padding: var(--space-8);
   }
 
   .section-headline {
