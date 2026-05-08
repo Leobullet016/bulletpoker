@@ -4,7 +4,6 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -55,32 +54,4 @@ strong, b {
 
 .skip-to-content:focus {
   top: var(--space-4);
-}
-
-/* --- Placeholder image blocks --- */
-
-.img-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.img-placeholder--hero {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  max-width: 420px;
-}
-
-.img-placeholder--feature {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 480px;
 }

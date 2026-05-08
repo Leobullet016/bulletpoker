@@ -25,7 +25,6 @@
 .pro-benefits-headline,
 .pro-stats-headline,
 .coin-cta-headline,
-.cta-headline,
 .feature-headline {
   font-size: clamp(1.5rem, 6vw, 2rem);
 }
@@ -327,13 +326,9 @@
 
   .footer-brand {
     display: flex;
-    align-items: center;
-    min-height: calc(var(--font-size-sm) + var(--space-3));
-  }
-
-  .footer-brand {
     align-items: flex-start;
     justify-content: flex-start;
+    min-height: calc(var(--font-size-sm) + var(--space-3));
   }
 
   .footer-col {
@@ -543,10 +538,6 @@
 
   .section-headline {
     font-size: clamp(2rem, 3.5vw, 3rem);
-  }
-
-  .cta-headline {
-    font-size: var(--font-size-3xl);
   }
 
   .stat-number {
