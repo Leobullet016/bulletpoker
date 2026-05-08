@@ -319,10 +319,16 @@
 
   /* Footer 4-col on tablet+: brand | Produto | Legal | Contato */
   .footer-nav {
-    grid-template-columns: auto 1fr 1.5fr 1.5fr;
-    gap: var(--space-10);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
     align-items: start;
     text-align: left;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    min-height: calc(var(--font-size-sm) + var(--space-3));
   }
 
   .footer-brand {
