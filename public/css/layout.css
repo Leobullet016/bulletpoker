@@ -1863,6 +1863,28 @@
   line-height: 1.55;
 }
 
+.close-form-status {
+  min-height: 1.4em;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.close-form-status--loading {
+  color: var(--color-text-secondary);
+}
+
+.close-form-status--success {
+  color: var(--color-accent);
+}
+
+.close-form-status--error {
+  color: #ef4444;
+}
+
 .close-help {
   text-align: center;
   margin-top: var(--space-12);

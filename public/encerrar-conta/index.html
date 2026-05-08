@@ -71,7 +71,7 @@
         </div>
 
         <div class="close-form-card">
-          <form class="close-form" action="mailto:atendimento@bullet.cash" method="post" enctype="text/plain" novalidate>
+          <form id="close-account-form" class="close-form" data-email="atendimento@bullet.cash" novalidate>
 
             <div class="form-field">
               <label for="close-name" class="form-label">Nome completo *</label>
@@ -94,6 +94,8 @@
             </div>
 
             <button type="submit" class="btn-danger">Solicitar Encerramento</button>
+
+            <div class="close-form-status" role="status" aria-live="polite"></div>
 
             <p class="close-form-note">Ao enviar este formulário, sua solicitação será enviada para <strong>atendimento@bullet.cash</strong> e nossa equipe entrará em contato em até 48 horas úteis.</p>
 

@@ -212,12 +212,91 @@
     });
   }
 
+  /* --- Close-account form (FormSubmit AJAX) --- */
+  function initCloseAccountForm() {
+    var form = document.getElementById('close-account-form');
+    if (!form) return;
+
+    var email = form.getAttribute('data-email') || 'atendimento@bullet.cash';
+    var endpoint = 'https://formsubmit.co/' + email;
+    var statusEl = form.querySelector('.close-form-status');
+    var cpfInput = form.querySelector('#close-cpf');
+    var submitBtn = form.querySelector('button[type="submit"]');
+
+    function maskCpf(value) {
+      var v = value.replace(/\D/g, '').slice(0, 11);
+      v = v.replace(/(\d{3})(\d)/, '$1.$2');
+      v = v.replace(/(\d{3})(\d)/, '$1.$2');
+      v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      return v;
+    }
+
+    if (cpfInput) {
+      cpfInput.addEventListener('input', function (e) {
+        e.target.value = maskCpf(e.target.value);
+      });
+    }
+
+    function setStatus(message, kind) {
+      statusEl.textContent = message;
+      statusEl.className = 'close-form-status' + (kind ? ' close-form-status--' + kind : '');
+    }
+
+    function clearStatus() {
+      setTimeout(function () { setStatus('', ''); }, 5000);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      setStatus('Enviando...', 'loading');
+
+      var data = new FormData();
+      data.append('Nome',   form.querySelector('#close-name').value);
+      data.append('Email',  form.querySelector('#close-email').value);
+      data.append('CPF',    form.querySelector('#close-cpf').value);
+      data.append('Motivo', form.querySelector('#close-reason').value);
+      data.append('_subject',  'Nova Solicitação de Encerramento de Conta');
+      data.append('_captcha',  'false');
+      data.append('_template', 'table');
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Status ' + res.status);
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function () {
+          setStatus('✓ Solicitação enviada com sucesso!', 'success');
+          form.reset();
+          clearStatus();
+        })
+        .catch(function (err) {
+          console.error('Erro ao enviar:', err);
+          setStatus('✗ Não foi possível enviar. Tente novamente.', 'error');
+          clearStatus();
+        })
+        .then(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  }
+
   /* --- Init --- */
   function init() {
     initAccordion();
     initCountUp();
     initQrModal();
     initMobileMenu();
+    initCloseAccountForm();
   }
 
   if (document.readyState === 'loading') {
