@@ -400,7 +400,7 @@
     gap: var(--space-10);
     padding-block: var(--space-12);
     margin-top: var(--space-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 0;
   }
 
   .poker-site-logo {

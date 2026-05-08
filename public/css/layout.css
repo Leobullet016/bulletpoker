@@ -281,7 +281,6 @@
   align-items: center;
   gap: var(--space-10);
   padding-block: var(--space-12);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: var(--space-8);
 }
 
